@@ -1,0 +1,98 @@
+# Different data types in R
+
+# Vectors:
+
+numeric_vector <- c(1, 2, 3, 4)
+numeric_vector <- 1:4
+summary(numeric_vector)
+str(numeric_vector)
+class(numeric_vector)
+mode(numeric_vector)
+typeof(numeric_vector)
+
+character_vector <- c('hello', 'world', 'R')
+str(character_vector)
+summary(character_vector)
+class(character_vector)
+typeof(character_vector)
+mode(character_vector)
+table(character_vector)
+
+ordinal_vector <- c('one', 'two', 'one')
+str(ordinal_vector)
+class(ordinal_vector)
+typeof(ordinal_vector)
+mode(ordinal_vector)
+
+factor_vector <- factor(character_vector)
+factor_vector_ordinal <- factor(ordinal_vector, levels = c('one', 'two'))
+summary(factor_vector)
+summary(factor_vector_ordinal)
+str(factor_vector)
+str(factor_vector_ordinal)
+class(factor_vector_ordinal)
+class(factor_vector)
+
+# matrices
+
+matrice <- matrix(1:4, nrow = 2, ncol = 2, byrow = T, dimnames = list(c('Row1', 'Row2'), c('Col1', 'Col2')))
+str(matrice)
+summary(matrice)
+class(matrice)
+typeof(matrice)
+mode(matrice)
+
+# arrays
+
+dim1 <- c("A1", "A2")
+dim2 <- c("B1", "B2", "B3")
+dim3 <- c("C1", "C2", "C3", "C4")
+my_array <- array(1:24, c(2,3,4), dimnames=list(dim1, dim2, dim3))
+my_array
+
+summary(my_array)
+str(my_array)
+class(my_array)
+typeof(my_array)
+mode(my_array)
+
+# datasets:
+
+var1 <- c('hello', 'world','R')
+var2 <- 1:3
+row_names <- paste('Row', 1:3, sep = '')
+row_names
+my_data <- data.frame(var1, var2, row.names = row_names)
+my_data
+
+class(my_data)
+typeof(my_data)
+str(my_data)
+summary(my_data)
+my_data$var1
+
+
+# lists
+
+my_list <- list('title' = 'My_list', 'Description' = 'This is a list example that can contain several variables of different type', matrice, my_array, my_data)
+
+my_list
+my_list$title
+my_list[[2]]
+
+str(my_list)
+summary(my_list)
+class(my_list)
+typeof(my_list)
+
+# tibbles
+library(tibble)
+mtcars <- as_tibble(mtcars); mtcars
+
+summary(mtcars)
+str(mtcars)
+class(mtcars)
+typeof(mtcars)
+mode(mtcars)
+
+
